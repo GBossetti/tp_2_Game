@@ -46,13 +46,13 @@ void Personaje::update()
     _velocity = { 0,0 };
     
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-        //_velocity.y = -4;
+        _velocity.y = -4;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
         _velocity.x = -4;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-       // _velocity.y = 4;
+       _velocity.y = 4;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
         _velocity.x = 4;
@@ -70,13 +70,13 @@ void Personaje::update()
         _sprite.setPosition(_sprite.getOrigin().x, _sprite.getPosition().y);
     }*/
 
-    if (_sprite.getGlobalBounds().top < 300) {
-        _sprite.setPosition(_sprite.getPosition().x, 300 + _sprite.getOrigin().y);
-    }
-    /*
+    //if (_sprite.getGlobalBounds().top < 300) {
+    //    _sprite.setPosition(_sprite.getPosition().x, 300 + _sprite.getOrigin().y);
+    //}
+    
     if (_sprite.getGlobalBounds().top < 0) {
         _sprite.setPosition(_sprite.getPosition().x, _sprite.getOrigin().y);
-    }*/
+    }
 
     if (_sprite.getGlobalBounds().left + _sprite.getGlobalBounds().width > 450) {
         _sprite.setPosition(450 - (_sprite.getGlobalBounds().width - _sprite.getOrigin().x), _sprite.getPosition().y);

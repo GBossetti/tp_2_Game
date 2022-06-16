@@ -1,11 +1,2 @@
-﻿  Carpincho.cpp
-C:\Users\Gonzalo\Documents\GitHub\tp_2_game\Carpincho.cpp(28,1): error C2511: 'void Carpincho::respawn(sf::RenderTarget &)': overloaded member function not found in 'Carpincho'
-C:\Users\Gonzalo\Documents\GitHub\tp_2_game\Carpincho.h(5): message : see declaration of 'Carpincho'
-C:\Users\Gonzalo\Documents\GitHub\tp_2_game\Carpincho.cpp(29,2): error C3861: 'setPosition': identifier not found
-  CarpinchoCopado.cpp
-  Collisionable.cpp
-  GamePlay.cpp
-  main.cpp
-C:\Users\Gonzalo\Documents\GitHub\tp_2_game\main.cpp(5,10): fatal error C1083: Cannot open include file: 'MoveRand.h': No such file or directory
-  Personaje.cpp
-  Generating Code...
+﻿  CarpinchoCopado.cpp
+  juego_01.vcxproj -> C:\Users\Gonzalo\Documents\GitHub\tp_2_game\x64\Debug\juego_01.exe

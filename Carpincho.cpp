@@ -21,7 +21,7 @@ void Carpincho::draw(sf::RenderTarget& target, sf::RenderStates states) const
 void Carpincho::respawn()
 {
 	//Acá se tiene que llamar al objeto, no a la propiedad. La clase tiene que ser transformable.
-	_sprite.setPosition((std::rand() % 250) + 150 + _sprite.getLocalBounds().width, std::rand() % 500 + _sprite.getLocalBounds().height);
+	_sprite.setPosition((std::rand() % 200) + 150 + _sprite.getLocalBounds().width, std::rand() % 500 + _sprite.getLocalBounds().height);
 }
 
 sf::FloatRect Carpincho::getBounds() const

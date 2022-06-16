@@ -1,6 +1,7 @@
+#include <stdlib.h>
 #include "GamePlay.h"
 
-void GamePlay::aceleracion(Personaje repartidor)
+void GamePlay::aceleracion(Personaje repartidor, sf::Sprite aux)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
@@ -17,9 +18,10 @@ void GamePlay::aceleracion(Personaje repartidor)
         }
     }
 
-    int velocidad = gamePlay.aceleracion(personaje);
-    image.move(0, velocidad);
-    if (image.getPosition().y > 0) {
-        image.setPosition(image.getPosition().x, -600);
+    int velocidad = repartidor.getAceleracion();
+    
+    aux.move(0, velocidad);
+    if (aux.getPosition().y > 0) {
+        aux.setPosition(aux.getPosition().x, -600);
     }
 }
