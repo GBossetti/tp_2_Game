@@ -149,6 +149,7 @@
     <ClCompile Include="Carpincho.cpp" />
     <ClCompile Include="CarpinchoCopado.cpp" />
     <ClCompile Include="Collisionable.cpp" />
+    <ClCompile Include="GamePlay.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Personaje.cpp" />
   </ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="Carpincho.h" />
     <ClInclude Include="CarpinchoCopado.h" />
     <ClInclude Include="Collisionable.h" />
+    <ClInclude Include="GamePlay.h" />
     <ClInclude Include="Personaje.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -5,6 +5,7 @@
 #include "MoveRand.h"
 #include "Carpincho.h"
 #include "CarpinchoCopado.h"
+#include "GamePlay.h"
 
 int main()
 {
@@ -56,22 +57,9 @@ int main()
 
         //Update 
         //image.move(0, 4); //Mueve para abajo - Necesito un segundo fondo que inicialmente empezará en el -600 //Otra forma sería el método Paralax
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            if (repartidor.getAceleracion() < 12)
-            {
-                repartidor.setAceleracion(1);
-            }
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            if (repartidor.getAceleracion() > 6)
-            {
-                repartidor.setAceleracion(-1);
-            }
-        }
 
-        int velocidad = repartidor.getAceleracion();
+        GamePlay gamePlay;
+        int velocidad =  gamePlay.epartidor.getAceleracion();
         image.move(0, velocidad);
         if (image.getPosition().y > 0) {
             image.setPosition(image.getPosition().x, -600);
