@@ -85,6 +85,8 @@ int main()
             repartidor.update();
             carpincho.setVelocity(sf::Vector2f( 0,velocidad ));
             carpincho.update();
+            camarada.setVelocity(sf::Vector2f(0, velocidad));
+            camarada.update();
 
             if (repartidor.getInmunidad()) {
                 time_inmunidad++;

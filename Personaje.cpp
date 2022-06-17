@@ -58,7 +58,8 @@ void Personaje::update()
         _velocity.x = 4;
     }
 
-    _sprite.move(_velocity);
+    //_sprite.move(_velocity);
+    _sprite.move( _velocity.x,0 );
     
     
     if (_sprite.getGlobalBounds().left < 150) {
