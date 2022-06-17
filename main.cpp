@@ -24,8 +24,6 @@ int main()
     text_vida.setFont(font);
     game_over.setFont(font);
 
-
-
     Personaje repartidor;
     int time_inmunidad = 0;
         
@@ -40,17 +38,13 @@ int main()
     int vidas = 3;
     int points = 0;
 
-    
-
-
     //Fondo
     sf::Sprite image;
     sf::Texture texture_fondo;
     texture_fondo.loadFromFile("ruta.png");
     image.setTexture(texture_fondo);
 
-
-   //GameLoop
+    //GameLoop
     while (window.isOpen())
     {
         //ReadInput
@@ -77,8 +71,6 @@ int main()
                 }
             }
 
-
-
             int velocidad = repartidor.getAceleracion();
 
             image.move(0, velocidad);
@@ -86,15 +78,13 @@ int main()
                 image.setPosition(image.getPosition().x, -600);
             }
 
-
-
-
             if (timer > 0) {
                 timer--;
             }
 
             repartidor.update();
-
+            carpincho.setVelocity(sf::Vector2f( 0,velocidad ));
+            carpincho.update();
 
             if (repartidor.getInmunidad()) {
                 time_inmunidad++;
@@ -111,7 +101,6 @@ int main()
                 }
             }
 
-
             if (timer == 0 && repartidor.isCollision(camarada)) {
                 // Repartidor.GetInmunidad() - Agregar condicion de que si choco obst�culos no pase nada.
                 repartidor.setInmunidad(true);
@@ -120,13 +109,9 @@ int main()
                 camarada.respawn();
                 points += 100;
             }
-
-
         }
 
         //CMD - Joy
-        
-
 
         //Update 
         //image.move(0, 4); //Mueve para abajo - Necesito un segundo fondo que inicialmente empezará en el -600 //Otra forma sería el método Paralax
@@ -154,9 +139,6 @@ int main()
 
         //GamePlay gameplay;
         //gameplay.aceleracion(repartidor, image);
-
-        
-
         
         text.setPosition(602, 0);
         text.setString("PUNTOS: " + std::to_string(points));
@@ -178,7 +160,6 @@ int main()
 
         if (vidas == 0) {
             window.draw(game_over);
-
         }
 
         if (timer == 0) {
