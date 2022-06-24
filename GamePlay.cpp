@@ -1,7 +1,11 @@
 #include <stdlib.h>
 #include "GamePlay.h"
 
-void GamePlay::aceleracion(Personaje repartidor, sf::Sprite aux)
+GamePlay::GamePlay()
+{
+}
+
+/*void GamePlay::aceleracion(Personaje repartidor, sf::Sprite aux)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
@@ -24,4 +28,17 @@ void GamePlay::aceleracion(Personaje repartidor, sf::Sprite aux)
     if (aux.getPosition().y > 0) {
         aux.setPosition(aux.getPosition().x, -600);
     }
+}
+*/
+
+void GamePlay::update()
+{
+    _player.update();
+    _carpincho.update();
+}
+
+void GamePlay::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+    target.draw(_player, states);
+    target.draw(_carpincho, states);
 }

@@ -11,7 +11,7 @@ int main()
     std::srand((unsigned)std::time(0)); //Planto la semilla para poder usar random con ctime
 
     //Inicialización de la ventana:
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Carpincho's Attack"); //Píxeles tamaño de ventana + nombre
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Carpincho's Attack", sf::Style::Default); //Píxeles tamaño de ventana + nombre
     window.setFramerateLimit(60); //Forzamos a que corra a 60 frames per second
 
     //Fuente
@@ -24,7 +24,9 @@ int main()
     text_vida.setFont(font);
     game_over.setFont(font);
 
-    Personaje repartidor;
+    GamePlay gp;
+
+    /*
     int time_inmunidad = 0;
         
     Carpincho carpincho;
@@ -43,6 +45,8 @@ int main()
     sf::Texture texture_fondo;
     texture_fondo.loadFromFile("ruta.png");
     image.setTexture(texture_fondo);
+    */
+
 
     //GameLoop
     while (window.isOpen())
@@ -55,6 +59,7 @@ int main()
                 window.close();
         }
 
+        /*
         if (vidas > 0) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
             {
@@ -112,36 +117,11 @@ int main()
                 points += 100;
             }
         }
-
-        //CMD - Joy
-
-        //Update 
-        //image.move(0, 4); //Mueve para abajo - Necesito un segundo fondo que inicialmente empezará en el -600 //Otra forma sería el método Paralax
-        /*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            if (repartidor.getAceleracion() < 12)
-            {
-                repartidor.setAceleracion(1);
-            }
-        }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-        {
-            if (repartidor.getAceleracion() > 6)
-            {
-                repartidor.setAceleracion(-1);
-            }
-        }
-
-        int velocidad =  repartidor.getAceleracion();
-        image.move(0, velocidad);
-        if (image.getPosition().y > 0) {
-            image.setPosition(image.getPosition().x, -600);
-        }
         */
 
-        //GamePlay gameplay;
-        //gameplay.aceleracion(repartidor, image);
+        gp.update();
         
+        /*
         text.setPosition(602, 0);
         text.setString("PUNTOS: " + std::to_string(points));
 
@@ -150,16 +130,16 @@ int main()
 
         game_over.setPosition(250, 300);
         game_over.setString("GAME OVER");
-        
+        */
+
         window.clear();
 
         //Draw
-        window.draw(image);
-        window.draw(repartidor);
-        window.draw(carpincho);
+        window.draw(gp);
         window.draw(text);
         window.draw(text_vida);
 
+        /*
         if (vidas == 0) {
             window.draw(game_over);
         }
@@ -167,6 +147,8 @@ int main()
         if (timer == 0) {
             window.draw(camarada);
         }
+        */
+
 
         //Display - Fli
         window.display();

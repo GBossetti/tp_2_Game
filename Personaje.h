@@ -2,7 +2,7 @@
 #include <SFML\Graphics.hpp>
 #include "Collisionable.h"
 
-class Personaje: public sf::Drawable, public Collisionable
+class Personaje: public sf::Drawable, public sf::Transformable , public Collisionable
 {
 private: 
 	sf::Sprite _sprite;
